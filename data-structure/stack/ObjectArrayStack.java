@@ -1,7 +1,7 @@
 /**
   * @FileName : ObjectArrayStack.java
   * @Date : 2020. 3. 12. 
-  * @변경이력 : 클래스 구현
+  * @변경이력 : top 계산 오류 수정
   * @프로그램 설명 : Object형의 배열을 사용한 Stack입니다.
   */
 public class ObjectArrayStack {
@@ -19,8 +19,7 @@ public class ObjectArrayStack {
 		if (top >= max)
 			throw new ArrayIndexOutOfBoundsException();
 		
-		stack[top] = value;
-		top++;
+		stack[++top] = value;
 		
 		return value;
 	}
@@ -40,7 +39,7 @@ public class ObjectArrayStack {
 	}
 	
 	public int size() {
-		return top;
+		return top + 1;
 	}
 	
 	public boolean isEmpty() {
